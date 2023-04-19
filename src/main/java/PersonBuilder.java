@@ -1,55 +1,31 @@
 public class PersonBuilder {
-    String name;
-    String surname;
-    Integer age;
-    String address;
+    private String name;
+    private String surname;
+    private Integer age;
+    private String address;
 
 
-    public PersonBuilder setName(String name) {
-        try {
-            if (name == null) throw new Exception("Имя должно быть введено");
-            {
-                this.name = name;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public PersonBuilder setName(String name) throws Exception {
+        if (name == null) throw new Exception("Имя должно быть введено");
+        this.name = name;
         return this;
     }
 
-    public PersonBuilder setSurname(String surname) {
-        try {
-            if (surname == null) throw new Exception("Фамилию нужно ввести");
-            {
-                this.surname = surname;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public PersonBuilder setSurname(String surname) throws Exception {
+        if (surname == null) throw new Exception("Фамилию нужно ввести");
+        this.surname = surname;
         return this;
     }
 
-    public PersonBuilder setAge(int age) {
-        try {
-            if (age < 0 || age > 99) throw new Exception("Введите правильное значение возраста");
-            {
-                this.age = age;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public PersonBuilder setAge(int age) throws Exception {
+        if (age < 0 || age > 99) throw new Exception("Введите правильное значение возраста");
+        this.age = age;
         return this;
     }
 
-    public PersonBuilder setAddress(String address) {
-        try {
-            if (address == null) throw new Exception("Введите адрес");
-            {
-                this.address = address;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public PersonBuilder setAddress(String address) throws Exception {
+        if (address == null) throw new Exception("Введите адрес");
+        this.address = address;
         return this;
     }
 

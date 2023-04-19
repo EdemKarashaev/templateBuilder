@@ -18,11 +18,7 @@ public class Person {
     }
 
     public boolean hasAge() {
-        if (age != null) {
-            return true;
-        } else {
-            return false;
-        }
+        return age != null;
     }
 
     public boolean hasAddress() {
@@ -58,7 +54,7 @@ public class Person {
         this.surname = surname;
     }
 
-    public void setAge(int age) throws Exception {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -82,7 +78,7 @@ public class Person {
         return address;
     }
 
-    public PersonBuilder newChildBuilder() {
+    public PersonBuilder newChildBuilder() throws Exception {
         return new PersonBuilder().setAge(0).setSurname(this.surname).setAddress(this.address);
     }
 }

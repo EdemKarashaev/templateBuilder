@@ -12,7 +12,7 @@ public class PersonBuilderTest {
     }
 
     @Test
-    public void testBuildWithAllFields() {
+    public void testBuildWithAllFields() throws Exception {
         Person person = builder.setName("John")
                 .setSurname("Doe")
                 .setAge(30)
@@ -26,7 +26,7 @@ public class PersonBuilderTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testBuildWithoutSurname() {
+    public void testBuildWithoutSurname() throws Exception {
         builder.setName("John")
                 .setAge(30)
                 .setAddress("New York")
@@ -34,7 +34,7 @@ public class PersonBuilderTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testBuildWithNegativeAge() {
+    public void testBuildWithNegativeAge() throws Exception {
         builder.setName("John")
                 .setSurname("Doe")
                 .setAge(-30)
